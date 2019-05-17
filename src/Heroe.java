@@ -1,16 +1,33 @@
 public class Heroe {
 
-    String nombre;
-    String atributo;
-    int daño;
-    int nivel;
-    int puntosDeVida;
-    int fuerza;
-    int agilidad;
-    int inteligencia;
+    private String nombre;
+    private String atributo;
+    private int daño;
+    private int nivel;
+    private int puntosDeVida;
+    private int fuerza;
+    private int agilidad;
+    private int inteligencia;
 
-    public Heroe(String nombre) {
+    public Heroe(String nombre, String atributo,
+                 int puntosDeVida, int fuerza,
+                 int agilidad, int inteligencia) {
         this.nombre = nombre;
+        this.atributo = atributo;
+        this.puntosDeVida = puntosDeVida;
+        this.fuerza = fuerza;
+        this.agilidad = agilidad;
+        this.inteligencia = inteligencia;
+        this.nivel=1;
+        if (atributo.equals("Fuerza")==true){
+            daño=fuerza;
+        }
+        if (atributo.equals("Agilidad")==true){
+            daño=agilidad;
+        }
+        if (atributo.equals("Inteligencia")==true){
+            daño=inteligencia;
+        }
     }
 
     void moverse() {
