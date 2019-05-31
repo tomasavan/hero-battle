@@ -35,8 +35,14 @@ public class Heroe {
     }
 
     void atacar(Heroe heroeEnemigo) {
-        System.out.println(nombre + " ataca al " + heroeEnemigo.nombre);
-        heroeEnemigo.perderVida(daño);
+        if (dameNumeroReflejo(10)==1) {
+            System.out.println(nombre + " ataco con un critico al " + heroeEnemigo.nombre + "!!");
+            heroeEnemigo.perderVida(daño * 2);
+        }
+        else {
+            System.out.println(nombre + " ataca al " + heroeEnemigo.nombre);
+            heroeEnemigo.perderVida(daño);
+        }
     }
 
     void perderVida(int daño) {
@@ -55,5 +61,10 @@ public class Heroe {
             return true;
         else return false;
 
+    }
+
+    private int dameNumeroReflejo(int numeroMaximo) {
+        int numero = (int) (Math.random() * numeroMaximo) + 1;
+        return numero;
     }
 }
