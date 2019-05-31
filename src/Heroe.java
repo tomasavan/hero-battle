@@ -48,6 +48,12 @@ public class Heroe {
             System.out.println(nombre + ": perdi "
                     + daño + " de vida, me quedan " + puntosDeVida);
         }
-    }
 
+    }
+    boolean estarVivo (){
+        if(puntosDeVida > 0)
+            return true;
+        else return false;
+
+    }
 }
