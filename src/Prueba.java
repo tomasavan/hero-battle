@@ -7,7 +7,14 @@ public class Prueba {
         Heroe he2 = new Heroe("Invoker","Inteligencia",
                 550,13, 6,23);
 
-        System.out.println("La Batalla ha Comenzado");
+        for (int i = 10;i > 0; i--){
+            System.out.println("La Batalla comienza en: " + i);
+            if (i == 1)
+                System.out.println("La Batalla ha Comenzado");
+
+
+        }
+
         he1.moverse();
         he2.moverse();
         //System.out.println(he2.nombre + " tiro albondiga!");
