@@ -18,15 +18,15 @@ public class Heroe {
         this.fuerza = fuerza;
         this.agilidad = agilidad;
         this.inteligencia = inteligencia;
-        this.nivel=1;
-        if (atributo.equals("Fuerza")==true){
-            daño=fuerza;
+        this.nivel = 1;
+        if (atributo.equals("Fuerza") == true) {
+            daño = fuerza;
         }
-        if (atributo.equals("Agilidad")==true){
-            daño=agilidad;
+        if (atributo.equals("Agilidad") == true) {
+            daño = agilidad;
         }
-        if (atributo.equals("Inteligencia")==true){
-            daño=inteligencia;
+        if (atributo.equals("Inteligencia") == true) {
+            daño = inteligencia;
         }
     }
 
@@ -35,13 +35,16 @@ public class Heroe {
     }
 
     void atacar(Heroe heroeEnemigo) {
-        if (dameNumeroReflejo(10)==1) {
+        if (dameNumeroReflejo(10) >= 9) {
             System.out.println(nombre + " ataco con un critico al " + heroeEnemigo.nombre + "!!");
             heroeEnemigo.perderVida(daño * 2);
-        }
-        else {
+        } else {
+            if (dameNumeroReflejo(10)==1) {
+                System.out.println(nombre + " ha fallado el ataque!!");
+            } else {
             System.out.println(nombre + " ataca al " + heroeEnemigo.nombre);
             heroeEnemigo.perderVida(daño);
+            }
         }
     }
 
@@ -56,8 +59,9 @@ public class Heroe {
         }
 
     }
-    boolean estarVivo (){
-        if(puntosDeVida > 0)
+
+    boolean estarVivo() {
+        if (puntosDeVida > 0)
             return true;
         else return false;
 
