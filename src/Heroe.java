@@ -9,6 +9,8 @@ public class Heroe {
     private int agilidad;
     private int inteligencia;
 
+
+
     public Heroe(String nombre, String atributo,
                  int puntosDeVida, int fuerza,
                  int agilidad, int inteligencia) {
@@ -18,7 +20,7 @@ public class Heroe {
         this.fuerza = fuerza;
         this.agilidad = agilidad;
         this.inteligencia = inteligencia;
-        this.nivel = 1;
+        this.nivel = nivel;
         if (atributo.equals("Fuerza") == true) {
             daño = fuerza;
         }
@@ -30,9 +32,6 @@ public class Heroe {
         }
     }
 
-    void moverse() {
-        System.out.println(nombre + " se movio");
-    }
 
     void atacar(Heroe heroeEnemigo) {
         if (dameNumeroReflejo(10) >= 9) {
@@ -47,6 +46,7 @@ public class Heroe {
             }
         }
     }
+
 
     void perderVida(int daño) {
         puntosDeVida = puntosDeVida - daño;
