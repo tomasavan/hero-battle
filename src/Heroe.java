@@ -1,13 +1,7 @@
 public class Heroe {
 
-    protected String nombre;
-    protected String atributo;
-    protected int daño;
-    protected int nivel;
-    protected int puntosDeVida;
-    protected int fuerza;
-    protected int agilidad;
-    protected int inteligencia;
+    protected String nombre, atributo;
+    protected int daño, nivel, puntosDeVida, fuerza, agilidad, inteligencia;
 
     public Heroe(String nombre, String atributo,
                  int puntosDeVida, int fuerza,
@@ -19,7 +13,7 @@ public class Heroe {
         this.agilidad = agilidad;
         this.inteligencia = inteligencia;
         this.nivel = 1;
-        if (atributo.equals("Fuerza") == true) {
+        if (atributo.equals("Fuerza")) {
             daño = fuerza;
         }
         if (atributo.equals("Agilidad") == true) {
@@ -33,15 +27,18 @@ public class Heroe {
 
     protected void atacar(Heroe heroeEnemigo) {
         if (dameNumeroReflejo(10) >= 9) {
-            System.out.println(nombre + " ataco con un critico al " + heroeEnemigo.nombre + "!!");
+            System.out.println(nombre + " ataco con un critico a " + heroeEnemigo.nombre + "!!");
             heroeEnemigo.perderVida(daño * 2);
         } else if (dameNumeroReflejo(10) == 1) {
-            System.out.println(nombre + " ha fallado el ataque!!");
+            fallarAtaque();
         } else {
-            System.out.println(nombre + " ataca al " + heroeEnemigo.nombre);
+            System.out.println(nombre + " ataca a " + heroeEnemigo.nombre);
             heroeEnemigo.perderVida(daño);
         }
     }
+       public void fallarAtaque(){
+           System.out.println(nombre + " ha fallado el ataque!!");
+       }
 
     protected void perderVida(int daño) {
         puntosDeVida = puntosDeVida - daño;

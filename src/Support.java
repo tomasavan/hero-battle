@@ -6,8 +6,9 @@ public class Support extends Heroe {
                 puntosDeVida, fuerza,
                 agilidad, inteligencia);
     }
+    public void supportNivel(Heroe enemigo){
+        if (){
 
-    public void atacar(Heroe heroeEnemigo) {
-        super.atacar(heroeEnemigo);
+        }
     }
 }

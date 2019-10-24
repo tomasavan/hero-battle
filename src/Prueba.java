@@ -2,7 +2,6 @@ public class Prueba {
 
     public static void main(String[] args) throws InterruptedException {
 
-
         Carry Phantom = new Carry("Phantom Assasin", "Agilidad",
                 650, 13, 22, 10);
 
@@ -23,7 +22,6 @@ public class Prueba {
 
         }
         System.out.println("Termino la pelea");
-
     }
 
     public static int dameNumeroReflejo(int numeroMaximo) {
