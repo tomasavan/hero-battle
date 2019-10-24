@@ -1,7 +1,4 @@
-
-
 public class Prueba {
-
 
     public static void main(String[] args) throws InterruptedException {
 
@@ -33,4 +30,8 @@ public class Prueba {
         int numero = (int) (Math.random() * numeroMaximo) + 1;
         return numero;
     }
+
+
 }
+
+
