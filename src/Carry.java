@@ -6,8 +6,14 @@ public class Carry extends Heroe {
 
     public void atacar(Heroe heroeEnemigo) {
         super.atacar(heroeEnemigo);
-        if (dameNumeroReflejo(10) >= 9) {
-            subirDeNivel();
+        int numero = dameNumeroReflejo(10);
+        switch (numero) {
+            case 9 & 10:
+                System.out.println(nombre + " ataco con un critico a " + heroeEnemigo.nombre + "!!");
+                heroeEnemigo.perderVida(daño * 2);
+                subirDeNivel();
+                break;
+
         }
     }
 }
