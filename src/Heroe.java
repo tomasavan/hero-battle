@@ -25,20 +25,25 @@ public class Heroe {
     }
 
 
-    protected void atacar(Heroe heroeEnemigo) {
-        if (dameNumeroReflejo(10) >= 9) {
-            System.out.println(nombre + " ataco con un critico a " + heroeEnemigo.nombre + "!!");
-            heroeEnemigo.perderVida(daño * 2);
-        } else if (dameNumeroReflejo(10) == 1) {
-            fallarAtaque();
-        } else {
-            System.out.println(nombre + " ataca a " + heroeEnemigo.nombre);
-            heroeEnemigo.perderVida(daño);
+    public void atacar(Heroe heroeEnemigo) {
+        int numero = dameNumeroReflejo(10);
+        switch (numero) {
+            case 9 & 10:
+                System.out.println(nombre + " ataco con un critico a " + heroeEnemigo.nombre + "!!");
+                heroeEnemigo.perderVida(daño * 2);
+                break;
+            case 1:
+                fallarAtaque();
+                break;
+            default:
+                System.out.println(nombre + " ataca a " + heroeEnemigo.nombre);
+                heroeEnemigo.perderVida(daño);
         }
     }
-       public void fallarAtaque(){
-           System.out.println(nombre + " ha fallado el ataque!!");
-       }
+
+    public void fallarAtaque() {
+        System.out.println(nombre + " ha fallado el ataque!!");
+    }
 
     protected void perderVida(int daño) {
         puntosDeVida = puntosDeVida - daño;
