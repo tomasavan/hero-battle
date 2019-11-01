@@ -3,7 +3,7 @@ public class Prueba {
     public static void main(String[] args) throws InterruptedException {
 
         Carry Phantom = new Carry("Phantom Assasin", "Agilidad",
-                650, 13, 22, 10);
+                650, 13, 22, 8);
 
         Support Kael = new Support("Invoker", "Inteligencia",
                 550, 13, 6, 23);

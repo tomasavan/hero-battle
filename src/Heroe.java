@@ -1,7 +1,7 @@
-public class Heroe {
+public class Heroe extends Unidad {
 
-    protected String nombre, atributo;
-    protected int daño, nivel, puntosDeVida, fuerza, agilidad, inteligencia;
+    protected String atributo;
+    protected int fuerza, agilidad, inteligencia;
 
     public Heroe(String nombre, String atributo,
                  int puntosDeVida, int fuerza,
@@ -25,19 +25,18 @@ public class Heroe {
     }
 
 
-    public void atacar(Heroe heroeEnemigo) {
+    public void atacar(Unidad enemigo) {
+        super.atacar(enemigo);
         int numero = dameNumeroReflejo(10);
         switch (numero) {
             case 9 & 10:
-                System.out.println(nombre + " ataco con un critico a " + heroeEnemigo.nombre + "!!");
-                heroeEnemigo.perderVida(daño * 2);
+                System.out.println(nombre + " ataco con un critico a " + enemigo.nombre + "!!");
+                enemigo.perderVida(daño * 2);
                 break;
             case 1:
                 fallarAtaque();
                 break;
-            default:
-                System.out.println(nombre + " ataca a " + heroeEnemigo.nombre);
-                heroeEnemigo.perderVida(daño);
+
         }
     }
 
@@ -45,17 +44,7 @@ public class Heroe {
         System.out.println(nombre + " ha fallado el ataque!!");
     }
 
-    protected void perderVida(int daño) {
-        puntosDeVida = puntosDeVida - daño;
 
-        if (puntosDeVida <= 0) {
-            System.out.println(nombre + ": he muerto");
-        } else {
-            System.out.println(nombre + ": perdi "
-                    + daño + " de vida, me quedan " + puntosDeVida);
-        }
-
-    }
 
     protected void subirDeNivel() {
         nivel++;
@@ -63,17 +52,6 @@ public class Heroe {
     }
 
 
-    protected boolean estarVivo() {
-        if (puntosDeVida > 0)
-            return true;
-        else return false;
-
-    }
-
-    protected int dameNumeroReflejo(int numeroMaximo) {
-        int numero = (int) (Math.random() * numeroMaximo) + 1;
-        return numero;
-    }
 
 
 }
