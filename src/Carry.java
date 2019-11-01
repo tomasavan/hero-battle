@@ -4,13 +4,13 @@ public class Carry extends Heroe {
         super(nombre, atributo, puntosDeVida, fuerza, agilidad, inteligencia);
     }
 
-    public void atacar(Heroe heroeEnemigo) {
-        super.atacar(heroeEnemigo);
+    public void atacar(Unidad enemigo) {
+        super.atacar(enemigo);
         int numero = dameNumeroReflejo(10);
         switch (numero) {
             case 9 & 10:
-                System.out.println(nombre + " ataco con un critico a " + heroeEnemigo.nombre + "!!");
-                heroeEnemigo.perderVida(daño * 2);
+                System.out.println(nombre + " ataco con un critico a " + enemigo.nombre + "!!");
+                enemigo.perderVida(daño * 2);
                 subirDeNivel();
                 break;
 
