@@ -1,12 +1,9 @@
-public class Unidad {
+public abstract class Unidad {
     protected String nombre;
     protected int daño, nivel, puntosDeVida;
 
 
-     public void atacar (Unidad enemigo){
-         System.out.println(nombre + " ataca a " + enemigo.nombre);
-         enemigo.perderVida(daño);
-     }
+     public abstract void atacar (Unidad enemigo);
 
      protected void perderVida(int daño) {
         puntosDeVida = puntosDeVida - daño;
@@ -19,12 +16,9 @@ public class Unidad {
         }
 
     }
-    protected boolean estarVivo() {
-        if (puntosDeVida > 0)
-            return true;
-        else return false;
+    protected abstract boolean estarVivo();
 
-    }
+
     protected int dameNumeroReflejo(int numeroMaximo) {
         int numero = (int) (Math.random() * numeroMaximo) + 1;
         return numero;
