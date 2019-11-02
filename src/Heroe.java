@@ -16,17 +16,17 @@ public class Heroe extends Unidad {
         if (atributo.equals("Fuerza")) {
             daño = fuerza;
         }
-        if (atributo.equals("Agilidad") == true) {
+        if (atributo.equals("Agilidad")) {
             daño = agilidad;
         }
-        if (atributo.equals("Inteligencia") == true) {
+        if (atributo.equals("Inteligencia")) {
             daño = inteligencia;
         }
     }
 
 
+    @Override
     public void atacar(Unidad enemigo) {
-        super.atacar(enemigo);
         int numero = dameNumeroReflejo(10);
         switch (numero) {
             case 9 & 10:
@@ -36,8 +36,18 @@ public class Heroe extends Unidad {
             case 1:
                 fallarAtaque();
                 break;
+                default:
+                    System.out.println(nombre + " ataca a " + enemigo.nombre);
+                    enemigo.perderVida(daño);
 
         }
+    }
+
+    @Override
+    protected boolean estarVivo() {
+        if (puntosDeVida > 0)
+            return true;
+        else return false;
     }
 
     public void fallarAtaque() {

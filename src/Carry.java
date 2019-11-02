@@ -4,6 +4,8 @@ public class Carry extends Heroe {
         super(nombre, atributo, puntosDeVida, fuerza, agilidad, inteligencia);
     }
 
+
+    @Override
     public void atacar(Unidad enemigo) {
         super.atacar(enemigo);
         int numero = dameNumeroReflejo(10);
