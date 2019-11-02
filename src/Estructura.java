@@ -11,11 +11,4 @@ public class Estructura extends Unidad {
         System.out.println(nombre + " ataca a " + enemigo.nombre);
         enemigo.perderVida(daño);
     }
-
-    @Override
-    protected boolean estarVivo() {
-        if (puntosDeVida > 0)
-            return true;
-        else return false;
-    }
 }

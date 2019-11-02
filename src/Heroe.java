@@ -24,7 +24,6 @@ public class Heroe extends Unidad {
         }
     }
 
-
     @Override
     public void atacar(Unidad enemigo) {
         int numero = dameNumeroReflejo(10);
@@ -43,25 +42,13 @@ public class Heroe extends Unidad {
         }
     }
 
-    @Override
-    protected boolean estarVivo() {
-        if (puntosDeVida > 0)
-            return true;
-        else return false;
-    }
-
-    public void fallarAtaque() {
+    protected void fallarAtaque() {
         System.out.println(nombre + " ha fallado el ataque!!");
     }
-
-
 
     protected void subirDeNivel() {
         nivel++;
         System.out.println(nombre + " ha subido a nivel " + nivel);
     }
-
-
-
 
 }
