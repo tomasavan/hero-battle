@@ -42,6 +42,7 @@ public class Heroe extends Unidad {
         }
     }
 
+
     protected void fallarAtaque() {
         System.out.println(nombre + " ha fallado el ataque!!");
     }

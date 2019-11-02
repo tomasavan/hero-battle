@@ -2,6 +2,7 @@ public class Prueba {
 
     public static void main(String[] args) throws InterruptedException {
 
+
         Carry Phantom = new Carry("Phantom Assasin", "Agilidad",
                 650, 13, 22, 8);
 
@@ -29,7 +30,9 @@ public class Prueba {
         return numero;
     }
 
-
 }
+
+
+
 
 

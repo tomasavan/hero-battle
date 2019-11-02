@@ -1,11 +1,12 @@
-public abstract class Unidad implements UnidadAcción {
+public abstract class Unidad {
     protected String nombre;
-    protected int daño, nivel, puntosDeVida;
+    protected int nivel;
+    protected long daño, puntosDeVida;
 
 
     public abstract void atacar(Unidad enemigo);
 
-    public void perderVida(int daño) {
+    public void perderVida(long daño) {
         puntosDeVida = puntosDeVida - daño;
 
         if (puntosDeVida <= 0) {
@@ -23,8 +24,9 @@ public abstract class Unidad implements UnidadAcción {
         else return false;
     }
 
-    public int dameNumeroReflejo(int numeroMaximo) {
+    protected int dameNumeroReflejo(int numeroMaximo) {
         int numero = (int) (Math.random() * numeroMaximo) + 1;
         return numero;
     }
+
 }
